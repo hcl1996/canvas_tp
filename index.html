@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+   <canvas id="cvs" width="1600" height="626" style="display:block;background:#eee" ></canvas>
+  笔刷 <input type="range" value="20" min="0" max="100" id="brush"><br>
+  颜色 <input type="color" id="col">
+  <button id="save">保存</button>
+	<script src="js.js"></script>
+	<script>
+           
+      draw('#cvs',function(){
+      	   var save=document.querySelector('#save');
+      	   save.addEventListener('click',function(){
+      	   	var cvs=document.querySelector('#cvs');
+      	   var src=cvs.toDataURL()//变为图片路径
+      	   var imgs=document.createElement('img');
+      	   imgs.src=src;
+      	   document.body.appendChild(imgs)
+      	   })
+      	  
+      })
+
+	</script>
+</body>
+</html>
